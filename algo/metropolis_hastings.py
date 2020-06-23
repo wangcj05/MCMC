@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.stats as st
 import seaborn as sns
-
+import matplotlib.pyplot as plt
 
 mus = np.array([5, 5])
 sigmas = np.array([[1, .9], [.9, 1]])
@@ -31,6 +31,8 @@ def metropolis_hastings(p, iter=1000):
 if __name__ == '__main__':
     samples = metropolis_hastings(circle, iter=10000)
     sns.jointplot(samples[:, 0], samples[:, 1])
+    plt.show()
 
     samples = metropolis_hastings(pgauss, iter=10000)
     sns.jointplot(samples[:, 0], samples[:, 1])
+    plt.show()
